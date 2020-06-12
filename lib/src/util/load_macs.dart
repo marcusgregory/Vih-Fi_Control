@@ -6,7 +6,7 @@ import 'package:flutter/services.dart';
 
 class LoadMacDatabaseAsset {
   static Future<void> load() async {
-    if(Settings.macVendors!=null){
+    if(Settings.macVendors==null){
    Settings.macVendors = await compute(parseJsonMacVendorsFromAssets,await rootBundle.load('assets/macaddress.io-db.json'));
     }
   }
